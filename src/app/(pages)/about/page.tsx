@@ -16,14 +16,14 @@ export const metadata: Metadata= {
       }
     ],
     locale: 'jp',
-    type: 'website',
+    type: 'article',
   }
 }
 
-const Home = () => {
-  return (
-    <div className="text-[50px]">Nextjs超初心者入門</div>
-  )
-}
-
-export default Home
+const AboutPage = () => {
+    return (
+      <div className="text-[50px]">About</div>
+    )
+  }
+  
+  export default AboutPage
