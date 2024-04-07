@@ -28,7 +28,7 @@ interface TBlog {
 }
 
 const getBlogData = async () => {
-    const res = await fetch('https://zenn-next-demo-levtddqh1-neco75s-projects.vercel.app/api/blog/',{ cache: 'no-store' })
+    const res = await fetch('https://zenn-next-demo.vercel.app/api/blog',{ cache: 'no-store' })
 
     const blogData = await res.json()
 
