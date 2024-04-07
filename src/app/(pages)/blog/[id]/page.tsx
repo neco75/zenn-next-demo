@@ -7,13 +7,13 @@ export const metadata: Metadata= {
   openGraph: {
     title: 'Nextjs超初心者入門',
     description: 'SSR, SSG, ISRブログを作成する。',
-    url: '<サイトのurl>',
+    url: 'http://zenn-next-demo.vercel.app',
     siteName: 'SSGブログ',
     images: [
       {
         width: '1200',
         height: '675',
-        url: '<サイトのurl>/ogp-home.png'
+        url: 'http://zenn-next-demo.vercel.app/ogp-home.png'
       }
     ],
     locale: 'jp',
@@ -22,7 +22,7 @@ export const metadata: Metadata= {
 }
 
 const getBlogArticle = async (id: string) => {
-  const res = await fetch('http://localhost:3000/api/blog/'+id,{ cache: 'no-store' })
+  const res = await fetch('http://zenn-next-demo.vercel.app/api/blog/'+id,{ cache: 'no-store' })
 
   const blogArticle = await res.json()
 
