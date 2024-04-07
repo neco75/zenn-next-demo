@@ -7,13 +7,13 @@ export const metadata: Metadata= {
   openGraph: {
     title: 'Nextjs超初心者入門',
     description: 'SSR, SSG, ISRブログを作成する。',
-    url: 'http://zenn-next-demo.vercel.app',
+    url: 'https://zenn-next-demo-levtddqh1-neco75s-projects.vercel.app',
     siteName: 'SSGブログ',
     images: [
       {
         width: '1200',
         height: '675',
-        url: 'http://zenn-next-demo.vercel.app/ogp-home.png'
+        url: 'https://zenn-next-demo-levtddqh1-neco75s-projects.vercel.app/ogp-home.png'
       }
     ],
     locale: 'jp',
@@ -28,7 +28,7 @@ interface TBlog {
 }
 
 const getBlogData = async () => {
-    const res = await fetch('http://zenn-next-demo.vercel.app/api/blog')
+    const res = await fetch('https://zenn-next-demo-levtddqh1-neco75s-projects.vercel.app/api/blog')
 
     const blogData = await res.json()
 

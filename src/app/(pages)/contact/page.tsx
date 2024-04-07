@@ -7,13 +7,13 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'お問い合わせ | Nextjs超初心者入門',
         description: 'お問い合わせページです。',
-        url: 'http://zenn-next-demo.vercel.app',
+        url: 'https://zenn-next-demo-levtddqh1-neco75s-projects.vercel.app',
         siteName: 'SSGブログ',
         images: [
             {
                 width: '1200',
                 height: '675',
-                url: '<http://zenn-next-demo.vercel.app/ogp-contact.png'
+                url: '<https://zenn-next-demo-levtddqh1-neco75s-projects.vercel.app/ogp-contact.png'
             }
         ],
         locale: 'jp',
