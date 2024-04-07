@@ -22,7 +22,7 @@ export const metadata: Metadata= {
 }
 
 const getBlogArticle = async (id: string) => {
-  const res = await fetch('https://zenn-next-demo.vercel.app/api/blog'+id,{ cache: 'no-store' })
+  const res = await fetch('https://zenn-next-demo.vercel.app/api/blog/'+id,{ cache: 'no-store' })
 
   const blogArticle = await res.json()
 
