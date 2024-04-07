@@ -1,55 +1,18 @@
-import Link from "next/link"
-import { Metadata } from "next"
-
-export const metadata: Metadata= {
-  title: 'Nextjs超初心者入門',
-  description: 'SSR,SSG,ISRでブログを作成する。',
-  openGraph: {
-    title: 'Nextjs超初心者入門',
-    description: 'SSR, SSG, ISRブログを作成する。',
-    url: 'https://zenn-next-demo-levtddqh1-neco75s-projects.vercel.app',
-    siteName: 'SSGブログ',
-    images: [
-      {
-        width: '1200',
-        height: '675',
-        url: 'https://zenn-next-demo-levtddqh1-neco75s-projects.vercel.app/ogp-home.png'
-      }
-    ],
-    locale: 'jp',
-    type: 'article',
-  }
-}
-
-interface TBlog {
-    id: string;
-    title: string;
-    content: string;
-}
-
-const getBlogData = async () => {
-    const res = await fetch('https://zenn-next-demo.vercel.app/api/blog',{ cache: 'no-store' })
-
-    const blogData = await res.json()
-
-    return blogData
-}
+import BlogList from "@/app/components/blogList";
+import Loading from "@/app/loading";
+import { Suspense } from "react";
 
 const BlogPage = async () => {
 
-    const blogData = await getBlogData()
-
     return (
         <div className="container mx-auto py-[50px]">
-            <div className="grid grid-cols-12 gap-3">
-                {blogData.map((blog: TBlog) => (
-                    <div className="col-span-4 border border-black rounded p-5" key={blog.id}>
-                        <Link href={`/blog/${blog.id}`} className="w-full">
-                            <h2>{blog.title}</h2>
-                        </Link>
-                    </div>
-                ))}
-            </div>
+            <h2 className="text-[50px] font-bold mb-5">Blog</h2>
+            <Suspense fallback={<Loading />}>
+                <BlogList waitTime={3000} />
+            </Suspense>
+            <Suspense fallback={<Loading />}>
+                <BlogList waitTime={5000} />
+            </Suspense>
         </div>
     )
 }
